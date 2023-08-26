@@ -1,0 +1,33 @@
+﻿@model IEnumerable<MVC1001.Models.Employee>
+
+<h3>List of Employees</h3>
+
+<table border="1" width="100%">
+    <tr>
+        <th>#</th>
+        <th>Emp Id</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Position</th>
+        <th>Start Date</th>
+        <th>Campus</th>
+        <th>Salary</th>
+    </tr>
+
+    @{ int row = 1;} <!-- C# statement in razor code block -->
+
+    @foreach (var employee in ViewBag.OrderCampusName)
+    {
+        <tr>
+            <td>@row</td>
+            <td>@employee.EmpId</td>
+            <td>@employee.Name</td>
+            <td>@employee.Gender</td>
+            <td>@employee.Position</td>
+            <td>@employee.StartDate.ToShortDateString()</td>
+            <td>@employee.Campus</td>
+            <td>@employee.Salary.ToString("c")</td>
+        </tr>
+        row++;
+    }
+</table>

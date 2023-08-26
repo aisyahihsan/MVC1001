@@ -1,0 +1,36 @@
+﻿@model MVC1001.Models.PosLajuParcel
+
+<head>
+    <title>Pos Laju Edit Form</title>
+    <link href="~/css/PosLaju.css" rel="stylesheet" />
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        <h5>Edit Receiver Information</h5>
+        <p>
+            <label>Parcel Id:</label>
+            @Html.DisplayFor(x => x.ViewId)
+        </p>
+        <p>
+            <label>Receiver name:</label>
+            @Html.TextBoxFor(x => x.ReceiverName)
+        </p>
+        <p>
+            <label>Receiver address:</label>
+            @Html.TextAreaFor(x => x.ReceiverAddress)
+        </p>
+        <p>
+            <label>Receiver phone:</label>
+            @Html.TextBoxFor(x => x.ReceiverPhone)
+        </p>
+        <p>
+            <label>Receiver email:</label>
+            @Html.TextBoxFor(x => x.ReceiverEmail)
+        </p>
+
+        <p>
+            <input type="submit" value="Submit" />
+        </p>
+    }
+</body>

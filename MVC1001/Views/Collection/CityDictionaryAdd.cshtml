@@ -1,0 +1,6 @@
+﻿<h3>Dictionary with String Key and String Value</h3>
+
+@foreach (KeyValuePair<string, string> item in ViewBag.DictCities)
+{ 
+ <p>Key = @item.Key and value = @item.Value </p>
+}

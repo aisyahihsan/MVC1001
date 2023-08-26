@@ -1,0 +1,24 @@
+﻿@model MVC1001.Models.Employee
+
+<p>
+    Employee Id: @Model.EmpId
+</p>
+<p>
+    Name: @Model.Name
+</p>
+<p>
+    Gender: @Model.Gender
+</p>
+<p>
+    Position: @Model.Position
+</p>
+<p>
+    Start date: @Model.StartDate.ToLongDateString()
+</p>
+<p>
+    Campus: @Model.Campus
+</p>
+<p>
+    Salary: @Model.Salary.ToString("c2")
+</p>
+

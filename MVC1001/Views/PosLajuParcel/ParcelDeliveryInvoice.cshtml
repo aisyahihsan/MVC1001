@@ -1,0 +1,68 @@
+﻿@model MVC1001.Models.PosLajuParcel
+
+<head>
+    <title>Pos Laju Invoice</title>
+    <link href="~/css/PosLaju.css" rel="stylesheet" />
+</head>
+<body>
+    <p>
+        <label>Parcel Id:</label>
+        @Html.DisplayFor(x => x.ParcelId)
+    </p>
+    <p>
+        <label>Date and time:</label>
+        @Html.DisplayFor(x => x.ParcelDateTime)
+    </p>
+    <h5>Sender Information</h5>
+    <p>
+        <label>Sender name:</label>
+        @Html.DisplayFor(x => x.SenderName)
+    </p>
+    <p>
+        <label>Sender address:</label>
+        @Html.DisplayFor(x => x.SenderAddress)
+    </p>
+    <p>
+        <label>Sender phone:</label>
+        @Html.DisplayFor(x => x.SenderPhone)
+    </p>
+    <p>
+        <label>Sender email:</label>
+        @Html.DisplayFor(x => x.SenderEmail)
+    </p>
+
+    <h5>Receiver Information</h5>
+    <p>
+        <label>Receiver name:</label>
+        @Html.DisplayFor(x => x.ReceiverName)
+    </p>
+    <p>
+        <label>Receiver address:</label>
+        @Html.DisplayFor(x => x.ReceiverAddress)
+    </p>
+    <p>
+        <label>Receiver phone:</label>
+        @Html.DisplayFor(x => x.ReceiverPhone)
+    </p>
+    <p>
+        <label>Receiver email:</label>
+        @Html.DisplayFor(x => x.ReceiverEmail)
+    </p>
+
+    <h5>Parcel Information</h5>
+    <p>
+        <label>Weight:</label>
+        @Html.DisplayFor(x => x.DictWeight[Model.IndexWeight])
+    </p>
+    <p>
+        <label>Zone:</label>
+        @Html.DisplayFor(x => x.DictZone[Model.IndexZone])
+    </p>
+    <p>
+        <label>Amount:</label>
+        @Html.DisplayFor(x => x.Amount)
+    </p>
+    <p>
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>

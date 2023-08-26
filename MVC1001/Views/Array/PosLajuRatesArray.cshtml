@@ -1,0 +1,23 @@
+﻿<p>Pos Laju Rates</p>
+<table width="100%" border="1">
+    <tr align="center">
+        <td>Parcel Weight</td>
+        @foreach (string zone in ViewBag.Zones)
+        {
+            <td>@zone</td>
+        }
+    </tr>
+
+    @for (int row = 0; row < 9; row++)
+    {
+        <tr align="center">
+            <td>@ViewBag.WeightCategories[row]</td>
+            @for (int col = 0; col < 3; col++)
+            {
+                <td>
+                    @ViewBag.Rates[row, col].ToString("c")
+                </td>
+            }
+        </tr>
+    }
+</table>

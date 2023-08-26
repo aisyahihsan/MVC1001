@@ -1,0 +1,14 @@
+﻿<p>Employee Skill Set</p>
+
+@for (int i = 0; i < ViewBag.Skills.Length; i++)
+{ 
+    @ViewBag.Employees[i]
+    <br />
+    <ul>
+        @for (int j = 0; j < ViewBag.Skills[i].Length; j++)
+        { 
+            <li>@ViewBag.Skills[i][j]</li>
+        }
+    </ul>
+    <br />
+}

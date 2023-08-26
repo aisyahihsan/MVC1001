@@ -1,0 +1,56 @@
+﻿@model IEnumerable<MVC1001.Models.PosLajuParcel>
+
+<html>
+<head>
+    <title>Parcel List</title>
+</head>
+<body>
+    <h5>Parcel List</h5>
+    <p>
+        @Html.ActionLink("Create", "ParcelDelivery")
+    </p>
+
+    @using (Html.BeginForm("SearchIndex", "PosLajuParcel", FormMethod.Get))
+            {
+                <p>
+                    <label>Search by parcel id or sender name: </label>
+                    @Html.TextBox("SearchString")
+                    <input type="submit" value="Search"/>
+                    @Html.ActionLink("Back to Full List", "Index")
+                </p>
+            }
+    <table class="table">
+        <tr>
+            <th>@Html.DisplayNameFor(x => x.ViewId)</th>
+            <th>@Html.DisplayNameFor(x => x.ViewDateTime)</th>
+            <th>@Html.DisplayNameFor(x => x.SenderName)</th>
+            <th>@Html.DisplayNameFor(x => x.SenderPhone)</th>
+            <th>@Html.DisplayNameFor(x => x.ReceiverName)</th>
+            <th>@Html.DisplayNameFor(x => x.ReceiverAddress)</th>
+            <th>@Html.DisplayNameFor(x => x.ReceiverPhone)</th>
+            <th>@Html.DisplayNameFor(x => x.DictWeight)</th>
+            <th>@Html.DisplayNameFor(x => x.Amount)</th>
+            <th>@Html.DisplayNameFor(x => x)</th>
+        </tr>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(y => x.ViewId)</td>
+                <td>@Html.DisplayFor(y => x.ViewDateTime)</td>
+                <td>@Html.DisplayFor(y => x.SenderName)</td>
+                <td>@Html.DisplayFor(y => x.SenderPhone)</td>
+                <td>@Html.DisplayFor(y => x.ReceiverName)</td>
+                <td>@Html.DisplayFor(y => x.ReceiverAddress)</td>
+                <td>@Html.DisplayFor(y => x.ReceiverPhone)</td>
+                <td>@Html.DisplayFor(y => x.DictWeight[x.IndexWeight])</td>
+                <td>@Html.DisplayFor(y => x.Amount)</td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = x.ViewId}) |
+                    @Html.ActionLink("Edit", "Edit", new {id = x.ViewId}) |
+                    @Html.ActionLink("Delete", "Delete", new {id = x.ViewId})
+                </td>
+            </tr>
+        }
+    </table>
+</body>
+</html>

@@ -1,0 +1,24 @@
+﻿<p>Multiplication Table</p>
+<table width="100%" border="1">
+    <tr align="center" style="font-weight:bold">
+        <td>X</td>
+        @for (int i = 1; i <= 12; i++)
+        { 
+            <td>@i</td>
+        }
+    </tr>
+    @for (int i = 1; i <= 12; i++)
+    { 
+        <tr align="center">
+            <td style="font-weight:bold">
+                @i
+            </td>
+            @for (int j = 1; j <= 12; j++)
+            { 
+                <td>
+                    @ViewBag.Multiplications[i,j]
+                </td>
+            }
+        </tr>
+    }
+</table>

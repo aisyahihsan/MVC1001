@@ -1,0 +1,89 @@
+﻿@model MVC1001.Models.PosLajuParcel
+
+<head>
+    <title>Pos Laju Form</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        <h5>Sender Information</h5>
+        <div class="row">
+            <p class="col-md-4">
+                <label>@Html.DisplayNameFor(x => x.SenderName)</label>
+                @Html.TextBoxFor(x => x.SenderName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.SenderName, "",
+               new { @class = "text-danger" })
+            </p>
+        <p class="col-md-6">
+            <label>@Html.DisplayNameFor(x => x.SenderAddress)</label>
+            @Html.TextBoxFor(x => x.SenderAddress, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.SenderAddress, "",
+               new { @class = "text-danger" })
+        </p>
+         </div>
+        <div class="row">
+            <p class="col-md-4">
+                <label>@Html.DisplayNameFor(x => x.SenderPhone)</label>
+                @Html.TextBoxFor(x => x.SenderPhone, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.SenderPhone, "",
+                   new { @class = "text-danger" })
+            </p>
+            <p class="col-md-4">
+                <label>@Html.DisplayNameFor(x => x.SenderEmail)</label>
+                @Html.TextBoxFor(x => x.SenderEmail, new { @class = "form-control" })
+            </p>
+        </div>
+
+        <h5>Receiver Information</h5>
+        <div class="row">
+            <p class="col-md-4">
+                <label>@Html.DisplayNameFor(x => x.ReceiverName)</label>
+                @Html.TextBoxFor(x => x.ReceiverName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.ReceiverName, "",
+                   new { @class = "text-danger" })
+            </p>
+            <p class="col-md-6">
+                <label>@Html.DisplayNameFor(x => x.ReceiverAddress)</label>
+                @Html.TextBoxFor(x => x.ReceiverAddress, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.ReceiverAddress, "",
+                   new { @class = "text-danger" })
+            </p>
+        </div>
+        <div class="row">
+            <p class="col-md-4">
+                <label>@Html.DisplayNameFor(x => x.ReceiverPhone)</label>
+                @Html.TextBoxFor(x => x.ReceiverPhone, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.ReceiverPhone, "",
+                   new { @class = "text-danger" })
+            </p>
+            <p class="col-md-4">
+                <label>@Html.DisplayNameFor(x => x.ReceiverEmail)</label>
+                @Html.TextBoxFor(x => x.ReceiverEmail, new { @class = "form-control" })
+            </p>
+        </div>
+
+        <h5>Parcel Information</h5>
+        <div class="row">
+            <p class="col-md-4">
+                <label>@Html.DisplayNameFor(x => x.IndexWeight)</label>
+                @Html.DropDownListFor(x => x.IndexWeight,
+               new SelectList(Model.DictWeight, "Key", "Value"), "Select weight:",
+               new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.IndexWeight, "",
+                   new { @class = "text-danger" })
+            </p>
+            <p class="col-md-4">
+                <label>@Html.DisplayNameFor(x => x.IndexZone)</label>
+                @Html.DropDownListFor(x => x.IndexZone,
+               new SelectList(Model.DictZone, "Key", "Value"), "Select zone:",
+               new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.IndexZone, "",
+                   new { @class = "text-danger" })
+            </p>
+        </div>
+        <br />
+        <p>
+            <input type="submit" value="Submit" class="btn btn-primary"/>
+        </p>
+    }
+</body>

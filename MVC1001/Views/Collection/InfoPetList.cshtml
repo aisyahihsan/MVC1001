@@ -1,0 +1,12 @@
+﻿<h3>Pet Info from List</h3>
+
+<ul>
+    @foreach (string pet in ViewBag.ListPets)
+    {
+        <li>@pet</li>
+    }
+</ul>
+
+<p>Number of pets: @ViewBag.Count</p>
+<p>Is there a rabbit? @ViewBag.Contains</p>
+<p>Index of rabbit: @ViewBag.IndexOf</p>

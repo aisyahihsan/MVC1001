@@ -1,0 +1,15 @@
+﻿@using (Html.BeginForm())
+{ 
+    <p>
+        Your name: @Html.TextBox("Name")
+    </p>
+    <p>
+        Your weight: @Html.TextBox("Weight")
+    </p>
+    <p>
+        Your height: @Html.TextBox("Height")
+    </p>
+    <p>
+        <input type="submit" value="Submit" />
+    </p>
+}

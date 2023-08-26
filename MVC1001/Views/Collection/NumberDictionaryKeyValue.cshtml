@@ -1,0 +1,14 @@
+﻿<h3>Dictionary Numbers - C# within HTML Element</h3>
+
+@foreach (KeyValuePair<int, string> item in ViewBag.DictNumbers)
+{ 
+    <p>Key = @item.Key and Value = @item.Value</p>
+}
+
+<h3>Dictionary Numbers - C# within Razor Code Block</h3>
+
+@foreach (KeyValuePair<int, string> item in ViewBag.DictNumbers)
+{ 
+    @:Key = @item.Key and Value = @item.Value
+    <br />
+}

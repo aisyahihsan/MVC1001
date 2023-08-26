@@ -1,0 +1,32 @@
+﻿@model IEnumerable<MVC1001.Models.Employee>
+
+<h3>List of Employees</h3>
+
+<table border="1" width="100%">
+    <tr>
+        <th>#</th>
+        <th>Emp Id</th>
+        <th>Name</th>
+        <th>Position</th>
+        <th>Salary</th>
+        <th>Deduction</th>
+        <th>Net Salary</th>
+    </tr>
+
+    @{ int row = 1;} <!-- C# statement in razor code block -->
+
+    @foreach (var employee in Model)
+    {
+        <tr>
+            <td>@row</td>
+            <td>@employee.EmpId</td>
+            <td>@employee.Name</td>
+            <td>@employee.Position</td>
+            <td>@employee.Salary.ToString("c2")</td>
+            <td>@employee.Deduction.ToString("c2")</td>
+            <td>@employee.NetSalary.ToString("c2")</td>
+        </tr>
+        row++;
+    }
+</table>
+

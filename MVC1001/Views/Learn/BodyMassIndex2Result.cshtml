@@ -1,0 +1,35 @@
+﻿@model MVC1001.Models.Person
+    <link href="~/css/BMI.css" rel="stylesheet" />
+
+<p>
+    <label>Name:</label>
+    @Model.Name
+</p>
+<p>
+    <label>Gender:</label>
+    @Model.Gender
+</p>
+<p>
+    <label>Weight:</label> 
+    @Model.Weight.ToString("n1")
+</p>
+<p>
+    <label>Height:</label> 
+    @Model.Height.ToString("n2")
+</p>
+<p>
+    <label>Smoking:</label>
+    @Model.Smoking
+</p>
+<p>
+    <label>Vaccinated:</label> 
+    @Model.Vaccinated
+</p>
+<p>
+    <label>Body mass index (BMI):</label> 
+    @Model.Bmi.ToString("n1")
+</p>
+<p>
+    <label>BMI class:</label> 
+    @Model.BmiClass
+</p>
